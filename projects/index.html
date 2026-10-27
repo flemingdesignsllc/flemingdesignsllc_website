@@ -9,45 +9,49 @@
   <title>Fleming Design Studio</title>
   <style>
     body {
-  margin: 0;
-  padding: 0;
-  background-color: #FFFBF6;
-  font-family: "Rouge Script", cursive;
-}
+      margin: 0;
+      padding: 0;
+      background-color: #FFFBF6;
+      font-family: "Rouge Script", cursive;
+    }
 
-.rouge-script-regular {
-  font-family: "Rouge Script", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+    .rouge-script-regular {
+      font-family: "Rouge Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
     header {
-      background-color: #ebaf24; /* Tan header */
+      background-color: #ebaf24;
       color: white;
-      padding: 10px;
+      padding: 10px 0 0;
       text-align: center;
       position: relative;
     }
 
+    header h1 {
+      color: #1A0F00;
+      margin: 0;
+      padding: 12px 0 8px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
     header img {
-      margin-top: 10px;
-      width: 100px; /* Adjust the width as needed */
+      display: block;
+      width: 100%;
       height: auto;
+      margin: 0;
+      object-fit: cover;
     }
 
     nav {
-      background-color: #AB8757; /* Orangy tan for the navigation bar */
-      padding: 10px;
-      text-align: center;
-    }
-
-     nav {
-      background-color: #004225; /* British racing green for the navigation bar */
+      background-color: #004225;
       padding: 10px;
       text-align: center;
     }
 
     nav button {
-      background-color: #056937; /* Green button background color */
+      background-color: #056937;
       color: white;
       border: none;
       padding: 8px 16px;
@@ -60,7 +64,7 @@
     }
 
     nav button:hover {
-      background-color: #1e965a; /* Light green on hover */
+      background-color: #1e965a;
     }
   </style>
 </head>
@@ -68,13 +72,12 @@
 
   <header>
     <h1>Fleming Design Studio</h1>
-    <h2>In Progress Works<h2>
-    <img src="DSC_8192.JPG" alt="starry night"> 
+    <img src="snipped_SN.png" alt="Fleming Design Studio banner">
   </header>
 
-
   <nav>
-    <button onclick="window.location.href='/index.html'">Home</button>
+    <button onclick="window.location.href='./index.html/'">Home</button>
+    <button onclick="window.location.href='./projects/'">In process works</button>
     <button onclick="window.location.href='./Gallery/'">Gallery</button>
     <button onclick="window.location.href='./CommissionWork/'">Commissions</button>
     <button onclick="window.location.href='./Contact/'">Contact Me</button>
