@@ -22,26 +22,34 @@
     }
 
     header {
-      background-color: #ebaf24;
-      color: white;
-      padding: 10px 0 0;
-      text-align: center;
       position: relative;
-    }
-
-    header h1 {
-      color: #1A0F00;
+      width: 100%;
+      padding: 0;
       margin: 0;
-      padding: 12px 0 8px;
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      overflow: hidden;
+      background: none;
     }
 
     header img {
       display: block;
       width: 100%;
-      height: auto;
-      margin: 0;
+      height: 260px;
       object-fit: cover;
+      object-position: center;
+      margin: 0;
+    }
+
+    header h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      color: #1A0F00;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.7);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      z-index: 1;
+      white-space: nowrap;
     }
 
     nav {
@@ -66,22 +74,27 @@
     nav button:hover {
       background-color: #1e965a;
     }
-  </style>
+
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+ </style>
 </head>
 <body>
 
   <header>
-    <h1>Fleming Design Studio</h1>
     <img src="snipped_SN_2.png" alt="Fleming Design Studio banner">
+    <h1>Fleming Design Studio</h1>
   </header>
 
   <nav>
-    <button onclick="window.location.href='./index.html/'">Home</button>
     <button onclick="window.location.href='./projects/'">In process works</button>
     <button onclick="window.location.href='./Gallery/'">Gallery</button>
     <button onclick="window.location.href='./CommissionWork/'">Commissions</button>
     <button onclick="window.location.href='./Contact/'">Contact Me</button>
   </nav>
+
 
   <section id="introduction">
     <h2>Intro to Data Science</h2>
