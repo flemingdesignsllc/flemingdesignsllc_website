@@ -1,1 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+  <title>Fleming Design Studio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFFBF6;
+      font-family: "Rouge Script", cursive;
+    }
 
+    .rouge-script-regular {
+      font-family: "Rouge Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      background: none;
+    }
+
+    header img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+      margin: 0;
+    }
+
+    header h1 {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      color: #1A0F00;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.7);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      z-index: 1;
+      white-space: nowrap;
+    }
+
+    nav {
+      background-color: #004225;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav button {
+      background-color: #056937;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin: 0 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #1e965a;
+    }
+
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .portfolio-item {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #d9dddc;
+      border-radius: 5px;
+    }
+
+    .portfolio-item h3 {
+      color: #3399ff;
+    }
+
+    .portfolio-item p {
+      color: #666;
+    }
+
+    .essay-section {
+      margin-top: 30px;
+      background-color: #FFFBF6;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .essay-section h2 {
+      color: #1A0F00;
+      margin-bottom: 15px;
+    }
+
+    .essay-section p {
+      color: #666;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .bullet-points {
+      text-align: left;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="snipped_SN.png" alt="Fleming Design Studio banner">
+    <h1>Fleming Design Studio</h1>
+  </header>
+
+  <nav>
+    <button onclick="window.location.href='./projects/'">In process works</button>
+    <button onclick="window.location.href='./Gallery/'">Gallery</button>
+    <button onclick="window.location.href='./CommissionWork/'">Commissions</button>
+    <button onclick="window.location.href='./Contact/'">Contact Me</button>
+  </nav>
+
+  <section>
+    <div class="essay-section">
+      <h2>Master of Science in Applied Data Science</h2>
+      <p>Lessa Fleming<br>Lessa.fleming@gmail.com</p>
+      <p>LinkedIn- www.linkedin.com/in/lessa-fleming-94903591</p>
+      <p>
+        As a Master’s degree student of Data Science at Syracuse University, my education included an in-depth education of a wide range of topics. These included statistics, machine learning, visualizations, and practical applications of data analysis.
+      </p>
+      <p>To complete this there are primary core courses that total 18 credits, secondary courses that total 6 credits, electives that total 9 credits, and a Data Science portfolio. A track is chosen based on the student's interests and career goals.</p>
+      <p>Syracuse University’s Applied Data Science program is a program that works with two schools of study to prepare a student upon graduation to gain insights from data, and provide actionable recommendations.</p>
+      <div class="bullet-points">
+        <p>• Data and Business Analytics – delve deeper into the business applications of data science.</p>
+        <p>• Language Analytics – focus on unstructured language data.</p>
+        <p>• Data Pipelines and Platforms – explore data collection and data engineering.</p>
+        <p>• Artificial Intelligence – learn how to use advanced deep learning predictive models in an ethical way.</p>
+      </div>
+      <p>After choosing a track and completing all the required courses upon graduation a student should be able to demonstrate a range of skills including:</p>
+      <div class="bullet-points">
+        <p>• Collect, store, and access data by identifying and leveraging applicable technologies.</p>
+        <p>• Create actionable insight across a range of contexts (e.g. societal, business, political), using data and the full data science life cycle.</p>
+        <p>• Apply visualization and predictive models to help generate actionable insight.</p>
+        <p>• Use programming languages such as R and Python to support the generation of actionable insight.</p>
+        <p>• Communicate insights gained via visualization and analytics to a broad range of audiences (including project sponsors and technical team leads.</p>
+        <p>• Apply ethics in the development, use, and evaluation of data and predictive models (e.g., fairness, bias, transparency, privacy).</p>
+      </div>
+<p>To start the journey into Data Science the first class is important, this gives you your first step into this world and introduces you to the first language application, R Studio. IST 687 Introductory Data Science is foundational to the major and emphasizes data cleaning, analysis, and communication.</p>
+
+      <div class="bullet-points">
+        <p>• Identify a problem and the data needed for addressing the problem.</p>
+        <p>• Perform basic computational scripting using R and other optional tools. </p>
+        <p>• Transform data through processing, linking, aggregation, summarization, and searching.</p>
+        <p>• Organize and manage data at various stages of a project life cycle.</p>
+        <p>• Determine appropriate techniques for analyzing data.</p>
+      </div>
+
+      <p>The goal of this project is to learn the correct ways to locate data that had the right amount of data points from which to gain insight. In real life choosing your data set may not be an option; good selection matters.</p>
+
+<p>Once the data set was obtained, it was then cleaned, and basic statistical analysis was performed to help learn the data set. Without knowing what is in your data set, going further on analysis will be unreliable.</p>
+
+<p>This project highlighted my ability to identify the business questions that needed to be answered with the data, choose the correct methodology for extracting those answers, and showcase the results clearly.</p>
+  
+<p>One of the main analytical languages is Python. To be a good data scientist mastering this language is crucial. While I am no master at this yet, scripting for data analysis builds the foundation for more advanced work.</p>
+
+<p>This project involved analyzing two Airbnb datasets from Kaggle: one focusing on Airbnb data from various US cities and the other on Airbnb prices in European cities. In creating the business question, I could evaluate trends across markets.</p>
+
+<p>Overall, the analysis highlighted the impact of location, availability, price, and housing type on Airbnb rentals and customer satisfaction. Properties closer to metro stations were more likely to perform well.</p>
+
+<p>This project effectively addresses the specified learning goals by demonstrating proficiency in various data science skills and techniques. Through the analysis of Airbnb datasets from both US and European cities, I showed how business-oriented questions can be answered with data.</p>
+<p>
+
+<p>In the Applied Machine Learning project, I conducted an in-depth analysis of various machine learning algorithms and their practical applications. Using Python libraries such as scikit-learn and pandas, I compared model approaches and interpretability.</p>
+
+<p>Visualizations such as histograms and density charts highlighted the distribution of salaries within the dataset, and the majority falling within the $100,000 to $200,000 range. When a word cloud and frequency analysis were used, the visual story became clearer.</p>
+
+<p>This project is important to me and all individuals who are looking to go into a data science career. Understanding the average salary and what the average increase is per year you can walk into an informed decision.</p>
+
+<p>Through the analysis of two datasets on honeybee production and colony loss, several key findings emerged, indicating very concerning and scary trends in colony numbers, honey production, and bee health.</p>
+
+<p>Due to these findings, it is recommended to provide funding for initiatives aimed at incentivizing beekeeping and other bee-saving efforts. By improving the quantity and quality of beekeeping practices, we can work toward better ecological outcomes.</p>
+<p>While completing this project, a diverse set of skills were employed, ranging from data analysis and visualization to hypothesis testing and forecasting. The project involved the analysis of two data sources to answer a single ecological challenge.</p>
+
+<p>Another skill employed was statistical analysis. Statistical techniques such as hypothesis testing and time-series analysis were employed to derive insights from the data. These techniques are widely used in applied analytics.</p>
+
+<p>Visualizations such as histograms, density plots, and time-series plots were used to communicate findings effectively. This skill is valuable in roles that require presenting data-driven insights to stakeholders.</p>
+
+<p>By utilizing and enhancing these skills through project-based learning experiences like this one, I was able to prepare myself for a wide range of career opportunities in fields such as data science, research, and analytics.</p>
+
+<p>In my final project, I was able to demonstrate skills in data cleaning and preparation, analysis, visualizations, and domain knowledge. The trend in all projects is critical thinking and problem solving with data.</p>
+<p>My final project was taking weather data spanning from 2016-2022 for the entire United States. This data set was large and knowing where to limit the data was key; therefore, this data was limited carefully and analyzed responsibly.</p>
+<p>I utilized ARIMA forecasting techniques to predict weather conditions for the years 2023 and 2024. Due to the data having so many days and the time series structure, it was converted into a more manageable format for analysis.</p>
+
+<p>Through my educational journey at Syracuse University in Applied Data Science, I have acquired a diverse set of skills and knowledge that have prepared me for future career opportunities. Beginning with foundational coursework and ending with portfolio-based projects, the path has been holistic.</p>
+
+<p>Each project provided unique challenges and opportunities to demonstrate proficiency in various data science skills. This included programming languages like Python and SQL, statistical analysis, and design thinking.</p>
+
+<p>These projects underscored the importance of ethical considerations in data science, particularly in ensuring transparent and unbiased representation of data findings. This fact was highlighted through careful interpretations and communication.</p>
+
+<p>My education in applied data science has equipped me with highly practiced skill sets and a deep understanding of data-driven methodologies. This education and practice have positioned me for success in the field.</p>
+
+    </div>
+  </section>
+
+  <footer>
+    Image by <a href="https://www.freepik.com/free-vector/hand-drawn-bee-outline-illustration_23249375.htm#query=bee&position=0&from_view=keyword&track=sph&uuid=717b2aa2-e9ee-4044-97f1-d710a138474a">Freepik</a>
+  </footer>
+
+</body>
+</html>
