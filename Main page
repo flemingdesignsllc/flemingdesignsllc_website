@@ -38,7 +38,7 @@
     }
 
     nav button {
-      background-color: #056937; /* green Button background color */
+      background-color: #056937; /* Green button background color */
       color: white;
       border: none;
       padding: 8px 16px;
@@ -51,18 +51,18 @@
     }
 
     nav button:hover {
-      background-color: #F0D9BC; /* Tan on hover */
+      background-color: #1e965a; /* Light green on hover */
     }
 
     section {
       padding: 20px;
-      text-align: left; /* Align text to the left */
+      text-align: center; /* Align text to center */
     }
 
     .portfolio-item {
       padding: 20px;
       margin-bottom: 20px;
-      background-color: #FFFBF6;
+      background-color: #d9dddc;
       border-radius: 5px;
     }
 
@@ -103,15 +103,15 @@
 <body>
 
   <header>
-    <h1>Lessa Fleming - Data Science Portfolio</h1>
+    <h1>Fleming Design Studio</h1>
     <img src="Bee2.png" alt="Bee Image"> 
   </header>
 
   <nav>
-    <button onclick="window.location.href='./projects/'">Projects</button>
-    <button onclick="window.location.href='./curriculum/'">Curriculum</button>
-    <button onclick="window.location.href='./presentation/'">Presentation</button>
-    <button onclick="window.location.href='./resume/'">Resume</button>
+    <button onclick="window.location.href='./projects/'">In process works</button>
+    <button onclick="window.location.href='./Gallery/'">Gallery</button>
+    <button onclick="window.location.href='./CommissionWork/'">Commissions</button>
+    <button onclick="window.location.href='./Contact/'">Contact Me</button>
   </nav>
 
   <section>
