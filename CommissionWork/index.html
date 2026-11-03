@@ -79,20 +79,71 @@
       padding: 20px;
       text-align: center;
     }
-    .commission {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
-.commission img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
- </style>
+    .commission {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .commission img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .item-links {
+      margin-top: 6px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 14px;
+      color: #1A0F00;
+    }
+
+    .item-links a {
+      color: #1A0F00;
+      cursor: pointer;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 90vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 40px;
+      line-height: 1;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
@@ -102,22 +153,64 @@
   </header>
 
   <nav>
-  <button onclick="window.location.href='../index.html'">Home</button>
-  <button onclick="window.location.href='../projects/'">In process works</button>
-  <button onclick="window.location.href='../Gallery/'">Gallery</button>
-  <button onclick="window.location.href='../CommissionWork/'">Commissions</button>
-  <button onclick="window.location.href='../Contact/'">Contact Me</button>
+    <button onclick="window.location.href='../index.html'">Home</button>
+    <button onclick="window.location.href='../projects/'">In process works</button>
+    <button onclick="window.location.href='../Gallery/'">Gallery</button>
+    <button onclick="window.location.href='../CommissionWork/'">Commissions</button>
+    <button onclick="window.location.href='../Contact/'">Contact Me</button>
   </nav>
 
-
   <section id="Commissioned Pieces">
-  <h2>Commissioned Pieces</h2>
+    <h2>Commissioned Pieces</h2>
     <div class="commission">
-    <img src="Stagg.JPG" alt="Stagg">
-    <img src="Stagg2.JPG" alt="Stagg2">
-    <img src="Deathstar.jpg" alt="Deathstar">
+
+      <div class="item">
+        <img src="Stagg.JPG" alt="Stagg">
+        <div class="item-links">
+          <a href="Stagg.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Stagg2.JPG" alt="Stagg2">
+        <div class="item-links">
+          <a href="Stagg2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Deathstar.jpg" alt="Deathstar">
+        <div class="item-links">
+          <a href="Deathstar.jpg" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" alt="">
   </div>
-</section>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".zoom-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        lightboxImg.src = link.getAttribute("href");
+        lightboxImg.alt = link.closest(".item").querySelector("img").alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    document.getElementById("lightbox-close").addEventListener("click", function () {
+      lightbox.classList.remove("open");
+      lightboxImg.removeAttribute("src");
+    });
+  </script>
 
 </body>
 </html>
