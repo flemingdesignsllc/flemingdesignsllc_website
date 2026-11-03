@@ -94,11 +94,14 @@
       height: auto;
     }
 
-    .zoom-link {
-      display: inline-block;
+    .item-links {
       margin-top: 6px;
       font-family: "Times New Roman", Times, serif;
       font-size: 14px;
+      color: #1A0F00;
+    }
+
+    .item-links a {
       color: #1A0F00;
       cursor: pointer;
     }
@@ -140,6 +143,52 @@
       line-height: 1;
       cursor: pointer;
     }
+
+    .details-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .details-overlay.open {
+      display: flex;
+    }
+
+    .details-box {
+      position: relative;
+      background-color: #FFFBF6;
+      width: 90%;
+      max-width: 450px;
+      padding: 30px 25px 25px 25px;
+      border-radius: 5px;
+      text-align: left;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      color: #000000;
+    }
+
+    .details-box p {
+      margin: 0 0 12px 0;
+    }
+
+    .details-close {
+      position: absolute;
+      top: 5px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #1A0F00;
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -160,38 +209,111 @@
   <section id="Gallery of Works">
     <h2>Gallery of Works</h2>
     <div class="gallery">
+
       <div class="item">
         <img src="Hel.JPG" alt="Hel">
-        <a href="Hel.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Hel.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Hel2.JPG" alt="Hel2">
-        <a href="Hel2.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Hel2.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Lovers.JPG" alt="Lovers">
-        <a href="Lovers.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Lovers.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Lovers2.JPG" alt="Lovers2">
-        <a href="Lovers2.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Lovers2.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Starrynight.JPG" alt="Starrynight">
-        <a href="Starrynight.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Starrynight.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Starrynight3.JPG" alt="Starrynight3">
-        <a href="Starrynight3.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Starrynight3.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Vikinglongship.JPG" alt="VikingLS">
-        <a href="Vikinglongship.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Vikinglongship.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
       <div class="item">
         <img src="Vikinglongship2.JPG" alt="VikingLS2">
-        <a href="Vikinglongship2.JPG" class="zoom-link">Zoom</a>
+        <div class="item-links">
+          <a href="Vikinglongship2.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Title goes here</p>
+          <p>Details: Details go here</p>
+          <p>Price: Price goes here</p>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -200,15 +322,24 @@
     <img id="lightbox-img" alt="">
   </div>
 
+  <div class="details-overlay" id="details-overlay">
+    <div class="details-box">
+      <button class="details-close" id="details-close" aria-label="Close">&times;</button>
+      <div id="details-body"></div>
+    </div>
+  </div>
+
   <script>
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+    const detailsOverlay = document.getElementById("details-overlay");
+    const detailsBody = document.getElementById("details-body");
 
     document.querySelectorAll(".zoom-link").forEach(function (link) {
       link.addEventListener("click", function (e) {
         e.preventDefault();
         lightboxImg.src = link.getAttribute("href");
-        lightboxImg.alt = link.parentElement.querySelector("img").alt;
+        lightboxImg.alt = link.closest(".item").querySelector("img").alt;
         lightbox.classList.add("open");
       });
     });
@@ -216,6 +347,19 @@
     document.getElementById("lightbox-close").addEventListener("click", function () {
       lightbox.classList.remove("open");
       lightboxImg.removeAttribute("src");
+    });
+
+    document.querySelectorAll(".details-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        detailsBody.innerHTML = link.closest(".item").querySelector(".details-content").innerHTML;
+        detailsOverlay.classList.add("open");
+      });
+    });
+
+    document.getElementById("details-close").addEventListener("click", function () {
+      detailsOverlay.classList.remove("open");
+      detailsBody.innerHTML = "";
     });
   </script>
 
