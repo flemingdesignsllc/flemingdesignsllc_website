@@ -73,13 +73,14 @@
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='m' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006 0.02' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0.05 0 0 0 0 0 0.35 0 0 0 -0.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
 }
 
-nav button {
+    nav button {
   background: linear-gradient(180deg, #FFF3B0 0%, #E8C55A 22%, #B8860B 48%, #F1D77A 70%, #8A6410 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
   font-family: "Clicker Script", cursive;
+  font-weight: bold;
   border: none;
   padding: 8px 16px;
   margin: 0 5px;
@@ -88,7 +89,6 @@ nav button {
   display: inline-block;
   font-size: 24px;
   cursor: pointer;
-  font-weight: bold;
 }
 
 nav button:hover {
@@ -100,40 +100,153 @@ nav button:hover {
       text-align: center;
     }
 
-    .portfolio-item {
-      padding: 20px;
-      margin-bottom: 20px;
-      background-color: #d9dddc;
+    section h2 {
+      color: #1A0F00;
+      margin-bottom: 15px;
+      font-family: "Clicker Script", cursive;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .item-links {
+      margin-top: 6px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 14px;
+      color: #1A0F00;
+    }
+
+    .item-links a {
+      color: #1A0F00;
+      cursor: pointer;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 90vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 40px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .details-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .details-overlay.open {
+      display: flex;
+    }
+
+    .details-box {
+      position: relative;
+      background-color: #FFFBF6;
+      width: 90%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 35px 25px 25px 25px;
       border-radius: 5px;
+      text-align: left;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      color: #000000;
+      box-sizing: border-box;
     }
 
-    .portfolio-item h3 {
-      color: #3399ff;
+    .details-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
     }
 
-    .portfolio-item p {
-      color: #666;
+    .details-thumb {
+      display: block;
+      width: 120px;
+      height: auto;
+      flex-shrink: 0;
+      margin: 0;
     }
 
-    .essay-section p {
-    color: #000000;
-    text-align: left;
-    margin-bottom: 10px;
-    font-family: "Clicker Script", cursive;
-    font-size: 24px;
-}
+    .details-text {
+      flex: 1;
+      min-width: 0;
+    }
 
-    .essay-section h2 {
-    color: #1A0F00;
-    margin-bottom: 15px;
-    font-family: "Clicker Script", cursive;
+    .details-text p {
+      margin: 0 0 12px 0;
     }
-    
-    .bullet-points {
-    text-align: left;
-    margin-left: 20px;
+
+    .details-text p:last-child {
+      margin-bottom: 0;
     }
-    
+
+    .details-close {
+      position: absolute;
+      top: 5px;
+      right: 12px;
+      background: none;
+      border: none;
+      color: #1A0F00;
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    @media (max-width: 400px) {
+      .details-thumb {
+        width: 90px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -144,33 +257,308 @@ nav button:hover {
   </header>
 
   <nav>
-    <button onclick="window.location.href='./projects/'">In process works</button>
-    <button onclick="window.location.href='./Gallery/'">Gallery</button>
-    <button onclick="window.location.href='./CommissionWork/'">Commissions</button>
-    <button onclick="window.location.href='./Contact/'">Contact Me</button>
+    <button onclick="window.location.href='../index.html'">Home</button>
+    <button onclick="window.location.href='../Gallery/'">About Me</button>
+    <button onclick="window.location.href='../projects/'">In process works</button>
+    <button onclick="window.location.href='../CommissionWork/'">Commissions</button>
+    <button onclick="window.location.href='../Contact/'">Contact Me</button>
   </nav>
 
-  <section>
-    <div class="essay-section">
-      <h2>Meet the Artist</h2>
-      <p>Patrick Fleming</p>
-      <p><a href="https://www.instagram.com/flemingdesignsllc/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
-      <p><a href="https://www.facebook.com/profile.php?id=61595567246718" target="_blank" rel="noopener noreferrer">Facebook</a></p>
-      <p><a href="https://camdenartshoppes.com/" target="_blank" rel="noopener noreferrer">View in person at Camden Art Shoppes</a></p>
-     <p>
- I am Patrick Fleming, a South Carolina-based pyrography artist who creates intricate, high-contrast wood burnings entirely by hand. Working with solid hardwood cutoffs such as white oak, spalted maple, and poplar, I let the timber's natural grain and organic edges shape each piece.
-</p>
+  <section id="Gallery of Works">
+    <h2>Gallery of Works</h2>
+    <div class="gallery">
 
-<p>
-  My style is rooted in Scherenschnitte, the historic art of fine-line paper cutting. Using a professional Razertip burner, I translate those delicate, lace-like silhouettes into wood, employing precise heat control to etch deep textures and tonal gradients directly into the grain.
-</p>
+      <div class="item">
+        <img src="Hel.JPG" alt="Hel">
+        <div class="item-links">
+          <a href="Hel.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Hel </p>
+          <p>Details: 15" X 11.5" On Black Walnut </p>
+          <p>Price: $350.00 </p>
+        </div>
+      </div>
 
-<p>
-  My work explores European folklore, historical mythology, and dark nature. Focusing on stark archetypes, legendary beasts, and ancient, untamed landscapes, I merge old-world craftsmanship with raw natural materials to bridge traditional folk craft and contemporary fine art.
-</p>
+      <div class="item">
+        <img src="Hel2.JPG" alt="Hel2">
+        <div class="item-links">
+          <a href="Hel2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
 
+      <div class="item">
+        <img src="Lovers.JPG" alt="Lovers">
+        <div class="item-links">
+          <a href="Lovers.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Lovers </p>
+          <p>Details: 11.5" X 9" Walnut </p>
+          <p>Price: $220.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Lovers2.JPG" alt="Lovers2">
+        <div class="item-links">
+          <a href="Lovers2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Starrynight.JPG" alt="Starrynight">
+        <div class="item-links">
+          <a href="Starrynight.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Starry Night </p>
+          <p>Details: 10" X 18" Cherry </p>
+          <p>Price: $350.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Starrynight3.JPG" alt="Starrynight3">
+        <div class="item-links">
+          <a href="Starrynight3.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Vikinglongship.JPG" alt="VikingLS">
+        <div class="item-links">
+          <a href="Vikinglongship.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Viking Longship </p>
+          <p>Details: 17" X 9" Walnut </p>
+          <p>Price: $220.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Vikinglongship2.JPG" alt="VikingLS2">
+        <div class="item-links">
+          <a href="Vikinglongship2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Leprachaun.jpg" alt="Leprachaun">
+        <div class="item-links">
+          <a href="Leprachaun.jpg" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Leprachaun</p>
+          <p>Details: Walnut </p>
+          <p>Price: $380.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Leprachaun2.jpg" alt="Leprachaun2">
+        <div class="item-links">
+          <a href="Leprachaun2.jpg" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+       <div class="item">
+        <img src="Werewolf.jpg" alt="Werewolf">
+        <div class="item-links">
+          <a href="Werewolf.jpg" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Werewolf </p>
+          <p>Details: 18" X 10" Cherry </p>
+          <p>Price: $320.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Werewolf2.jpg" alt="Werewolf2">
+        <div class="item-links">
+          <a href="Werewolf2.jpg" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+
+     <div class="item">
+        <img src="Windmill.JPG" alt="Windmill">
+        <div class="item-links">
+          <a href="Windmill.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Windmill </p>
+          <p>Details: 18" X 9" Walnut </p>
+          <p>Price: $220.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Windmill2.JPG" alt="Windmill2">
+        <div class="item-links">
+          <a href="Windmill2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+      
+    <div class="item">
+        <img src="Dragon.JPG" alt="Dragon">
+        <div class="item-links">
+          <a href="Dragon.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Dragon </p>
+          <p>Details: 20" X 10" Cherry </p>
+          <p>Price: $380.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Dragon2.JPG" alt="Dragon2">
+        <div class="item-links">
+          <a href="Dragon2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div> 
+
+      <div class="item">
+        <img src="Cleopatra.jpg" alt="Cleopatra">
+        <div class="item-links">
+          <a href="Cleopatra.jpg" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Cleopatra </p>
+          <p>Details: Cherry </p>
+          <p>Price: $225.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Cleopatra2.png" alt="Cleopatra2">
+        <div class="item-links">
+          <a href="Cleopatra2.png" class="zoom-link">Zoom</a>
+        </div>
+      </div> 
+
+   <div class="item">
+        <img src="Cabinscene.JPG" alt="Cabinscene">
+        <div class="item-links">
+          <a href="Cabinscene.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Cabin Stream </p>
+          <p>Details: 18" X 9" Walnut </p>
+          <p>Price: $220.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Cabinscene2.JPG" alt="Cabinscene2">
+        <div class="item-links">
+          <a href="Cabinscene2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div> 
+<!-- Start Copy Here, Beginning of image group -->  
+   <div class="item">
+        <img src="Bat.JPG" alt="Bat">
+        <div class="item-links">
+          <a href="Bat.JPG" class="zoom-link">Zoom</a> |
+          <a href="#" class="details-link">Details</a>
+        </div>
+        <div class="details-content" hidden>
+          <p>Title: Spooky Bat </p>
+          <p>Details: 13" X 8" White Oak </p>
+          <p>Price: $125.00 </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Bat2.JPG" alt="Bat2">
+        <div class="item-links">
+          <a href="Bat2.JPG" class="zoom-link">Zoom</a>
+        </div>
+      </div>
+<!-- End Copy Here, End of image group --> 
+      
+ <!-- Do not touch anthing after this comment -->      
     </div>
+
   </section>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" alt="">
+  </div>
+
+  <div class="details-overlay" id="details-overlay">
+    <div class="details-box">
+      <button class="details-close" id="details-close" aria-label="Close">&times;</button>
+      <div id="details-body"></div>
+    </div>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const detailsOverlay = document.getElementById("details-overlay");
+    const detailsBody = document.getElementById("details-body");
+
+    document.querySelectorAll(".zoom-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        lightboxImg.src = link.getAttribute("href");
+        lightboxImg.alt = link.closest(".item").querySelector("img").alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    document.getElementById("lightbox-close").addEventListener("click", function () {
+      lightbox.classList.remove("open");
+      lightboxImg.removeAttribute("src");
+    });
+
+    document.querySelectorAll(".details-link").forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const item = link.closest(".item");
+        const pic = item.querySelector("img");
+
+        detailsBody.innerHTML = "";
+
+        const row = document.createElement("div");
+        row.className = "details-row";
+
+        const thumb = document.createElement("img");
+        thumb.src = pic.getAttribute("src");
+        thumb.alt = pic.alt;
+        thumb.className = "details-thumb";
+
+        const text = document.createElement("div");
+        text.className = "details-text";
+        text.innerHTML = item.querySelector(".details-content").innerHTML;
+
+        row.appendChild(thumb);
+        row.appendChild(text);
+        detailsBody.appendChild(row);
+
+        detailsOverlay.classList.add("open");
+      });
+    });
+
+    document.getElementById("details-close").addEventListener("click", function () {
+      detailsOverlay.classList.remove("open");
+      detailsBody.innerHTML = "";
+    });
+  </script>
 
 </body>
 </html>
