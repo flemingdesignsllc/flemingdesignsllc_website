@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Rouge+Script&display=swap" rel="stylesheet">
+  <title>Fleming Design Studio</title>
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFBF6;
+  background-size: 300px 300px, 100% 100%;
+  background-repeat: repeat, no-repeat;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.40 0 0 0 0 0.33 0.12 0 0 0 -0.02'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='m' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006 0.008' numOctaves='4' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.50 0 0 0 0 0.42 0.30 0 0 0 -0.09'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
+  font-family: "Rouge Script", cursive;
+}
 
+    .rouge-script-regular {
+      font-family: "Rouge Script", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      background: none;
+    }
+
+    header img {
+      display: block;
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+      margin: 0;
+    }
+
+    header h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0.15em 0.2em;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  z-index: 1;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #FFF3B0 0%, #E8C55A 22%, #B8860B 48%, #F1D77A 70%, #8A6410 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.85));
+}
+
+    nav {
+  background-color: #004225;
+  padding: 10px;
+  text-align: center;
+  background-size: 100% 100%, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.75 0 0 0 0 0.85 0 0 0 0 0.75 0.14 0 0 0 -0.03'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='m' color-interpolation-filters='sRGB'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.006 0.02' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0.05 0 0 0 0 0 0.35 0 0 0 -0.08'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E");
+}
+
+nav button {
+  background: linear-gradient(180deg, #FFF3B0 0%, #E8C55A 22%, #B8860B 48%, #F1D77A 70%, #8A6410 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: "Clicker Script", cursive;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav button:hover {
+  text-decoration: underline;
+}
+
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .portfolio-item {
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #d9dddc;
+      border-radius: 5px;
+    }
+
+    .portfolio-item h3 {
+      color: #3399ff;
+    }
+
+    .portfolio-item p {
+      color: #666;
+    }
+
+    .essay-section p {
+    color: #000000;
+    text-align: left;
+    margin-bottom: 10px;
+    font-family: "Clicker Script", cursive;
+    font-size: 24px;
+}
+
+    .essay-section h2 {
+    color: #1A0F00;
+    margin-bottom: 15px;
+    font-family: "Clicker Script", cursive;
+    }
+    
+    .bullet-points {
+    text-align: left;
+    margin-left: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="snipped_SN_2.png" alt="Fleming Design Studio banner">
+    <h1>Fleming Design Studio</h1>
+  </header>
+
+  <nav>
+    <button onclick="window.location.href='./projects/'">In process works</button>
+    <button onclick="window.location.href='./Gallery/'">Gallery</button>
+    <button onclick="window.location.href='./CommissionWork/'">Commissions</button>
+    <button onclick="window.location.href='./Contact/'">Contact Me</button>
+  </nav>
+
+  <section>
+    <div class="essay-section">
+      <h2>Meet the Artist</h2>
+      <p>Patrick Fleming</p>
+      <p><a href="https://www.instagram.com/flemingdesignsllc/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+      <p><a href="https://www.facebook.com/profile.php?id=61595567246718" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+      <p><a href="https://camdenartshoppes.com/" target="_blank" rel="noopener noreferrer">View in person at Camden Art Shoppes</a></p>
+     <p>
+ I am Patrick Fleming, a South Carolina-based pyrography artist who creates intricate, high-contrast wood burnings entirely by hand. Working with solid hardwood cutoffs such as white oak, spalted maple, and poplar, I let the timber's natural grain and organic edges shape each piece.
+</p>
+
+<p>
+  My style is rooted in Scherenschnitte, the historic art of fine-line paper cutting. Using a professional Razertip burner, I translate those delicate, lace-like silhouettes into wood, employing precise heat control to etch deep textures and tonal gradients directly into the grain.
+</p>
+
+<p>
+  My work explores European folklore, historical mythology, and dark nature. Focusing on stark archetypes, legendary beasts, and ancient, untamed landscapes, I merge old-world craftsmanship with raw natural materials to bridge traditional folk craft and contemporary fine art.
+</p>
+
+    </div>
+  </section>
+
+</body>
+</html>
